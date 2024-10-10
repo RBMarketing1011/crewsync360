@@ -1,7 +1,7 @@
 'use client'
 
-import { useId } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import { v4 } from 'uuid'
 
 const UserTabs = ({ accountId, userId }) =>
 {
@@ -34,7 +34,7 @@ const UserTabs = ({ accountId, userId }) =>
           {
             tabs.map((tab) => (
 
-              <option key={ useId() } value={ tab.href }>{ tab.name }</option>
+              <option key={ v4() } value={ tab.href }>{ tab.name }</option>
 
             ))
           }
@@ -49,7 +49,7 @@ const UserTabs = ({ accountId, userId }) =>
               tabs.map((tab) => (
 
                 <a
-                  key={ useId() }
+                  key={ v4() }
                   href={ tab.href }
                   aria-current={ path === tab.href ? 'page' : undefined }
                   className={ `${ path === tab.href

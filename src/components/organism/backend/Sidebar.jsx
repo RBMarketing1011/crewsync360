@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext, useId } from 'react'
+import { useContext } from 'react'
 import { MiscContext } from '@providers/context/MiscProvider'
 import { UserContext } from '@providers/context/UserProvider'
 import { signOut } from 'next-auth/react'
@@ -35,6 +35,7 @@ import
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import Messages from '@components/atom/Messages'
 import Image from 'next/image'
+import { v4 } from 'uuid'
 
 const Sidebar = ({ children, accountId }) =>
 {
@@ -151,7 +152,7 @@ const Sidebar = ({ children, accountId }) =>
                         {
                           operations.map(item => (
 
-                            <li key={ useId() }>
+                            <li key={ v4() }>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
@@ -181,7 +182,7 @@ const Sidebar = ({ children, accountId }) =>
                         {
                           financials.map(item => (
 
-                            <li key={ useId() }>
+                            <li key={ v4() }>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
@@ -211,7 +212,7 @@ const Sidebar = ({ children, accountId }) =>
                         {
                           admin.map(item => (
 
-                            <li key={ useId() }>
+                            <li key={ v4() }>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
@@ -275,7 +276,7 @@ const Sidebar = ({ children, accountId }) =>
                     {
                       operations.map(item => (
 
-                        <li key={ useId() }>
+                        <li key={ v4() }>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
@@ -305,7 +306,7 @@ const Sidebar = ({ children, accountId }) =>
                     {
                       financials.map(item => (
 
-                        <li key={ useId() }>
+                        <li key={ v4() }>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
@@ -335,7 +336,7 @@ const Sidebar = ({ children, accountId }) =>
                     {
                       admin.map(item => (
 
-                        <li key={ useId() }>
+                        <li key={ v4() }>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
