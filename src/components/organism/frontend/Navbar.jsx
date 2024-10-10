@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { MiscContext } from '@providers/context/MiscProvider'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -23,7 +24,14 @@ const Navbar = () =>
         <div className="flex items-center gap-x-12">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img alt="" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" className="h-8 w-auto" />
+            <Image
+              alt=""
+              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+              className="h-8 w-auto"
+              width={ 0 }
+              height={ 0 }
+              sizes='100vw'
+            />
           </a>
           <div className="hidden lg:flex lg:gap-x-12">
             { navigation.map((item) => (
@@ -55,10 +63,13 @@ const Navbar = () =>
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              <Image
                 alt=""
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                 className="h-8 w-auto"
+                width={ 0 }
+                height={ 0 }
+                sizes='100vw'
               />
             </a>
             <button

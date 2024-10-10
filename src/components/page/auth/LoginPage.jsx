@@ -11,6 +11,7 @@ import RedirectAfterSignIn from '@lib/helpers/RedirectAfterSignIn'
 import { toast } from 'react-toastify'
 import { clientLog } from '@lib/helpers/winston/clientLog'
 import Modal from '@components/atom/Modal'
+import Image from 'next/image'
 
 const LoginPage = () =>
 {
@@ -125,10 +126,13 @@ const LoginPage = () =>
       <RedirectAfterSignIn />
       <div className="mx-auto w-full max-w-sm lg:w-96">
         <div>
-          <img
+          <Image
             alt="Your Company"
             src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
             className="h-10 w-auto"
+            width={ 0 }
+            height={ 0 }
+            sizes='100vw'
           />
           <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account

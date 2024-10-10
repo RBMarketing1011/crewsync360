@@ -3,6 +3,7 @@
 import { useContext, useEffect } from 'react'
 import { NewUserScreenContext } from '@providers/context/NewUserScreenProvider'
 import { UserContext } from '@providers/context/UserProvider'
+import Image from 'next/image'
 
 const VerifyUserDetails = () =>
 {
@@ -155,10 +156,13 @@ const VerifyUserDetails = () =>
           {
             userInfo?.image &&
             <div className='w-20 h-20 rounded-full overflow-hidden'>
-              <img
+              <Image
                 src={ userInfo.image }
                 alt="Profile Pic"
                 className='w-full h-full object-cover object-center'
+                width={ 0 }
+                height={ 0 }
+                sizes='100vw'
               />
             </div>
           }

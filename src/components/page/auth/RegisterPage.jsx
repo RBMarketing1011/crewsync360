@@ -10,6 +10,7 @@ import { clientLog } from '@lib/helpers/winston/clientLog'
 import { UserContext } from '@providers/context/UserProvider'
 import { validatePassword } from '@lib/helpers/validatePassword'
 import { toast } from 'react-toastify'
+import Image from 'next/image'
 
 const RegisterPage = () =>
 {
@@ -122,10 +123,13 @@ const RegisterPage = () =>
       <RedirectAfterSignIn />
       <div className="mx-auto w-full max-w-sm lg:w-96">
         <div>
-          <img
+          <Image
             alt="Your Company"
             src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
             className="h-10 w-auto"
+            width={ 0 }
+            height={ 0 }
+            sizes='100vw'
           />
           <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Start your new account

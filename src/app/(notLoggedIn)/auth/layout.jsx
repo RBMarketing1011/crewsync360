@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 const Layout = ({ children }) =>
 {
@@ -42,10 +43,13 @@ const Layout = ({ children }) =>
                   </p>
                 </blockquote>
                 <figcaption className="mt-8 flex gap-x-4">
-                  <img
-                    alt=""
+                  <Image
+                    alt="placeholder"
                     src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     className="mt-1 h-10 w-10 flex-none rounded-full bg-gray-50"
+                    width={ 0 }
+                    height={ 0 }
+                    sizes='100vw'
                   />
                   <div className="text-sm leading-6">
                     <div className="font-semibold text-gray-900">Brenna Goyette</div>
