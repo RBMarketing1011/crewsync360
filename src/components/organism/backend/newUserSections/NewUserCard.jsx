@@ -2,7 +2,6 @@
 
 import { useContext } from 'react'
 import { NewUserScreenContext } from '@providers/context/NewUserScreenProvider'
-import { StripeContext } from '@providers/context/StripeContextProvider'
 import ProgressBar from '@components/atom/ProgressBar'
 
 const NewUserCard = ({ submit, children }) =>
@@ -14,9 +13,6 @@ const NewUserCard = ({ submit, children }) =>
   const [ progress, setProgress ] = progressState
   const [ current, setCurrent ] = currentState
   const [ emailError, setEmailError ] = emailErrorState
-
-  const { successMessageState } = useContext(StripeContext)
-  const [ successMessage ] = successMessageState
 
   const skipPage = () =>
   {
@@ -112,32 +108,12 @@ const NewUserCard = ({ submit, children }) =>
 
               :
 
-              (
-                emailError.type === 'success'
-                ||
-                emailError.type === 'done'
-              )
-                ?
-
-                <button
-                  type="submit"
-                  disabled={
-                    current.name === 'Add Billing' && !successMessage
-                      ? true : false
-                  }
-                  className="rounded-md bg-indigo-600 disabled:bg-indigo-200 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Next &rarr;
-                </button>
-
-                :
-
-                <button
-                  type="button"
-                  className="rounded-md bg-indigo-200 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:cursor-default"
-                >
-                  Next &rarr;
-                </button>
+              <button
+                type="button"
+                className="rounded-md bg-indigo-200 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:cursor-default"
+              >
+                Next &rarr;
+              </button>
         }
       </div>
     </form>
