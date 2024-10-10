@@ -53,7 +53,7 @@ const NewUserCompleted = () =>
 
     updateLoggedInStatus()
 
-  }, [])
+  })
 
   return (
     <main className="flex flex-col items-center justify-center">
@@ -63,7 +63,7 @@ const NewUserCompleted = () =>
         </div>
         <h1 className="text-2xl font-bold mb-2">All Set, You're Good to Go!</h1>
         <p className="text-gray-700 mb-6">
-          Thanks for sticking with us through the setup! You’ve officially leveled up your account and unlocked the magical powers of our software.
+          Thanks for sticking with us through the setup! You&apos;ve officially leveled up your account and unlocked the magical powers of our software.
         </p>
         <div className="flex justify-center mb-4">
           <CheckCircleIcon className="h-6 w-6 text-green-500" />

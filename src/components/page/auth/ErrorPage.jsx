@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { ArrowRightEndOnRectangleIcon } from '@heroicons/react/24/solid'
+import { v4 } from 'uuid'
 
 const links = [
   {
@@ -110,7 +111,7 @@ const ErrorPage = () =>
               <span className='flex items-center gap-2'>
                 { social.map(i => (
                   i.name === 'GitHub' &&
-                  <i.icon aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <i.icon key={ v4() } aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6" />
                 )) }
                 Anthony Reynolds
               </span>
