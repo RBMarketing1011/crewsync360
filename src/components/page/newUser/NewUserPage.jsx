@@ -2,7 +2,6 @@
 
 import { useContext, useEffect } from 'react'
 
-import { fetchCustomerSetup } from '@lib/stripe/fetchCustomerSetup'
 import Loading from '@components/atom/Loading'
 
 import VerifyEmail from '@components/organism/backend/newUserSections/VerifyEmail'
@@ -12,7 +11,6 @@ import { verifyToken } from '@lib/helpers/verifyToken'
 import VerifyCompanyDetails from '@components/organism/backend/newUserSections/VerifyCompanyDetails'
 import VerifyUserDetails from '@components/organism/backend/newUserSections/VerifyUserDetails'
 import AddUserPreferences from '@components/organism/backend/newUserSections/AddUserPreferences'
-import AddBillingDetails from '@components/organism/backend/newUserSections/AddBillingDetails'
 import InviteAdditionalUsers from '@components/organism/backend/newUserSections/InviteAdditionalUsers'
 import NewUserCompleted from '@components/organism/backend/newUserSections/NewUserCompleted'
 
