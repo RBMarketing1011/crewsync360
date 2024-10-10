@@ -18,27 +18,12 @@ import NewUserCompleted from '@components/organism/backend/newUserSections/NewUs
 
 import { NewUserScreenContext } from '@providers/context/NewUserScreenProvider'
 import { UserContext } from '@providers/context/UserProvider'
-import { StripeContext } from '@providers/context/StripeContextProvider'
 import NewUserCard from '@components/organism/backend/newUserSections/NewUserCard'
-import StripeProvider from '@providers/stripe/StripeProvider'
 
 import { toast } from 'react-toastify'
 
 const NewUserPage = () =>
 {
-  const {
-    errorMessageState, successMessageState,
-    clientSecretState, clientIdState, stripeLoadingState,
-    isClientSecretFetchedState
-  } = useContext(StripeContext)
-
-  const [ errorMessage, setErrorMessage ] = errorMessageState
-  const [ successMessage, setSuccessMessage ] = successMessageState
-  const [ clientSecret, setClientSecret ] = clientSecretState
-  const [ clientId, setClientId ] = clientIdState
-  const [ stripeLoading, setStripeLoading ] = stripeLoadingState
-  const [ isClientSecretFetched, setIsClientSecretFetched ] = isClientSecretFetchedState
-
   const {
     progressState, currentState, loadingState, companyInfoState,
     userInfoState, userPreferencesState, emailErrorState
@@ -86,12 +71,6 @@ const NewUserPage = () =>
             name: 'Add User Preference',
             status: 'upcoming',
             required: false,
-            complete: false
-          },
-          {
-            name: 'Add Billing',
-            status: 'upcoming',
-            required: true,
             complete: false
           },
           {
@@ -162,12 +141,6 @@ const NewUserPage = () =>
             required: false, complete: false
           },
           {
-            name: 'Add Billing',
-            status: 'upcoming',
-            required: true,
-            complete: false
-          },
-          {
             name: 'Add Users',
             status: 'upcoming',
             required: false,
@@ -224,29 +197,6 @@ const NewUserPage = () =>
     }
 
     session && handleActions()
-
-
-    const runFetchClientSecret = async () =>
-    {
-      setStripeLoading(true)
-      try
-      {
-        await fetchCustomerSetup(
-          setStripeLoading,
-          setErrorMessage,
-          setClientSecret,
-          setClientId,
-          `${ session?.user?.firstname } ${ session?.user?.lastname }`,
-          `${ session?.user?.email }`
-        )
-        setIsClientSecretFetched(true)  // Indicate that clientSecret has been fetched
-      } catch (error)
-      {
-        setErrorMessage('Error fetching client secret')
-      }
-    }
-
-    session && runFetchClientSecret()
 
   }, [ session ])
 
@@ -491,48 +441,21 @@ const NewUserPage = () =>
 
                   :
 
-                  current.name === 'Add Billing' ?
+                  current.name === 'Add Users' ?
 
-                    // Only return StripeProvider when clientSecret is available and fetched
-
-                    (!isClientSecretFetched || !clientSecret) ?
-                      <div>
-                        {/* { stripeLoading &&
-                          <Loading
-                            title='Loading'
-                            text='Please wait while we fetch your billing details...'
-                          />
-                        } */}
-                        { errorMessage && <p>{ errorMessage }</p> }
-                      </div>
-
-                      :
-
-                      <StripeProvider options={ options }>
-                        <NewUserCard
-                          submit={ (e) => submitBillingDetails(e) }
-                        >
-                          <AddBillingDetails />
-                        </NewUserCard>
-                      </StripeProvider>
+                    <NewUserCard
+                      submit={ (e) => submitAdditionalUsers(e) }
+                    >
+                      <InviteAdditionalUsers />
+                    </NewUserCard>
 
                     :
 
-                    current.name === 'Add Users' ?
+                    current.name === 'New User Completed' &&
 
-                      <NewUserCard
-                        submit={ (e) => submitAdditionalUsers(e) }
-                      >
-                        <InviteAdditionalUsers />
-                      </NewUserCard>
-
-                      :
-
-                      current.name === 'New User Completed' &&
-
-                      <NewUserCard>
-                        <NewUserCompleted />
-                      </NewUserCard>
+                    <NewUserCard>
+                      <NewUserCompleted />
+                    </NewUserCard>
       }
 
     </main>
