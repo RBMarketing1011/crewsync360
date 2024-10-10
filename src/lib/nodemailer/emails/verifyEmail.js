@@ -22,7 +22,7 @@ export const verifyEmail = (name, email, token) =>
         Please click on the following link to verify your email:
         </p>
         <br>
-        <a href='${ process.env.NEXT_PUBLIC_API_DOMAIN }/users/setpassword/${ token }' style='background: #EF5124; padding: 1rem 3rem; border-radius: .6rem; color: #ffffff; font-weight: bold; text-transform: uppercase; margin: 30px 0; text-decoration: none;'>
+        <a href='${ process.env.NEXT_PUBLIC_DOMAIN }/api/users/setpassword/${ token }' style='background: #EF5124; padding: 1rem 3rem; border-radius: .6rem; color: #ffffff; font-weight: bold; text-transform: uppercase; margin: 30px 0; text-decoration: none;'>
         Verify Email
         </a>
         <br>
@@ -36,7 +36,7 @@ export const verifyEmail = (name, email, token) =>
         If the link above does not work please copy and paste this link into your browser
         </p>
 
-        <h4>${ process.env.NEXT_PUBLIC_API_DOMAIN }/users/verification/${ token }</h4>
+        <h4>${ process.env.NEXT_PUBLIC_DOMAIN }/users/verification/${ token }</h4>
 
         <strong style='color: red;'>This link will expire in 30 minutes</strong>
 
