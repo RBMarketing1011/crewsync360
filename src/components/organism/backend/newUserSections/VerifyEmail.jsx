@@ -25,7 +25,7 @@ const VerifyEmail = () =>
       message: '',
       showError: false
     })
-  })
+  }, [])
 
   const verifyEmail = async (e) =>
   {

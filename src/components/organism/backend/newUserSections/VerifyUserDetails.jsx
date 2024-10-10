@@ -28,7 +28,7 @@ const VerifyUserDetails = () =>
       image: session?.user?.image,
       bio: session?.user?.bio
     }))
-  })
+  }, [])
 
   return (
     <div className='w-full'>

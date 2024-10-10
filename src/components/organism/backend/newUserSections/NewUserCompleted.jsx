@@ -53,7 +53,7 @@ const NewUserCompleted = () =>
 
     updateLoggedInStatus()
 
-  })
+  }, [])
 
   return (
     <main className="flex flex-col items-center justify-center">
@@ -61,7 +61,7 @@ const NewUserCompleted = () =>
         <div className="flex justify-center mb-4">
           <SparklesIcon className="h-8 w-8 text-indigo-500" />
         </div>
-        <h1 className="text-2xl font-bold mb-2">All Set, You're Good to Go!</h1>
+        <h1 className="text-2xl font-bold mb-2">All Set, You&apos;re Good to Go!</h1>
         <p className="text-gray-700 mb-6">
           Thanks for sticking with us through the setup! You&apos;ve officially leveled up your account and unlocked the magical powers of our software.
         </p>
