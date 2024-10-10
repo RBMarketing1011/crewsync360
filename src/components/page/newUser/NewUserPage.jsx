@@ -5,7 +5,6 @@ import { useContext, useEffect } from 'react'
 import Loading from '@components/atom/Loading'
 
 import VerifyEmail from '@components/organism/backend/newUserSections/VerifyEmail'
-import { Logo } from '@components/template/components/Logo'
 import { verifyToken } from '@lib/helpers/verifyToken'
 
 import VerifyCompanyDetails from '@components/organism/backend/newUserSections/VerifyCompanyDetails'
@@ -389,7 +388,6 @@ const NewUserPage = () =>
               Welcome to
             </p>
             <div className='flex items-center gap-4'>
-              <Logo className="inline-block h-8 w-auto" />
               <p className='text-2xl font-extrabold bg-gradient-to-r from-cyan-500 to-cyan-800 bg-clip-text text-transparent'>Juggernaut 360</p>
             </div>
             <p className='text-xl font-semibold mt-4 max-w-sm text-center'>
