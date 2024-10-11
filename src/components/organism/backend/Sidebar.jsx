@@ -137,7 +137,7 @@ const Sidebar = ({ children, accountId }) =>
                 <div className="flex h-16 shrink-0 items-center">
                   <Image
                     alt="Your Company"
-                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                    src="/images/mark.svg"
                     className="h-8 w-auto"
                     width={ 0 }
                     height={ 0 }
@@ -261,7 +261,7 @@ const Sidebar = ({ children, accountId }) =>
             <div className="flex h-16 shrink-0 items-center">
               <Image
                 alt="Your Company"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                src="/images/mark.svg"
                 className="h-8 w-auto"
                 width={ 0 }
                 height={ 0 }

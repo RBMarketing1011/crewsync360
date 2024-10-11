@@ -26,7 +26,7 @@ const Navbar = () =>
             <span className="sr-only">Your Company</span>
             <Image
               alt=""
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+              src="/images/mark.svg"
               className="h-8 w-auto"
               width={ 0 }
               height={ 0 }
@@ -65,7 +65,7 @@ const Navbar = () =>
               <span className="sr-only">Your Company</span>
               <Image
                 alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
+                src="/images/mark.svg"
                 className="h-8 w-auto"
                 width={ 0 }
                 height={ 0 }
