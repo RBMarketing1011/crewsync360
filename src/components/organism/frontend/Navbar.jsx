@@ -1,25 +1,54 @@
 'use client'
 
-import { useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { MiscContext } from '@providers/context/MiscProvider'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Features', href: '/features' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'News', href: '/news' },
 ]
 
 const Navbar = () =>
 {
   const { mobileMenuState } = useContext(MiscContext)
   const [ mobileMenuOpen, setMobileMenuOpen ] = mobileMenuState
+  const [ isScrolled, setIsScrolled ] = useState(false)
+
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
+      if (window.scrollY > 50)
+      {
+        setIsScrolled(true)
+      } else
+      {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () =>
+    {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
-    <header className="fixed top-0 w-full bg-transparent z-10 md:px-10">
+    <header
+      className={ `fixed top-0 w-full z-[1000] md:px-10 transition-all duration-300 
+        ${ isScrolled
+          ? 'bg-white'
+          :
+          'bg-transparent' }` }
+    >
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex items-center gap-x-12">
           <a href="/" className="-m-1.5 p-1.5">
@@ -51,7 +80,10 @@ const Navbar = () =>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <div className="hidden lg:flex">
+        <div className="hidden lg:flex items-center gap-x-5">
+          <a href="/auth/register" className="rounded-full bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Get Started Now
+          </a>
           <a href="/auth/login" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>

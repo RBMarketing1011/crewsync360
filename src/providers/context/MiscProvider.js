@@ -19,6 +19,8 @@ const MiscProvider = ({ children }) =>
   const [ openModal1, setOpenModal1 ] = useState(false)
   // Token
   const [ token, setToken ] = useState('')
+  // Is Page Scrolled
+  const [ isPageScrolled, setIsPageScrolled ] = useState(false)
 
   return (
     <MiscContext.Provider value={ {
@@ -30,6 +32,8 @@ const MiscProvider = ({ children }) =>
       modal1State: [ openModal1, setOpenModal1 ],
       // Token 
       tokenState: [ token, setToken ],
+      // Is Page Scrolled
+      isPageScrolledState: [ isPageScrolled, setIsPageScrolled ]
     } }>
 
       { children }

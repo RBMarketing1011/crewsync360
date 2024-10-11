@@ -1,3 +1,4 @@
+import Footer from '@components/organism/frontend/Footer'
 import Navbar from '@components/organism/frontend/Navbar'
 
 export const metadata = {
@@ -11,6 +12,7 @@ const Layout = ({ children }) =>
     <main>
       <Navbar />
       { children }
+      <Footer />
     </main>
   )
 }
