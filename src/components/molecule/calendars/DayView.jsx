@@ -134,14 +134,14 @@ const DayView = () =>
           >
             <button type="button" className="flex flex-col items-center pb-1.5 pt-3">
               <span>W</span>
-              {/* Default: "text-gray-900", Selected: "bg-gray-900 text-white", Today (Not Selected): "text-indigo-600", Today (Selected): "bg-indigo-600 text-white" */ }
+              {/* Default: "text-gray-900", Selected: "bg-gray-900 text-white", Today (Not Selected): "text-sky-600", Today (Selected): "bg-sky-600 text-white" */ }
               <span className="mt-3 flex h-8 w-8 items-center justify-center rounded-full text-base font-semibold text-gray-900">
                 19
               </span>
             </button>
             <button type="button" className="flex flex-col items-center pb-1.5 pt-3">
               <span>T</span>
-              <span className="mt-3 flex h-8 w-8 items-center justify-center rounded-full text-base font-semibold text-indigo-600">
+              <span className="mt-3 flex h-8 w-8 items-center justify-center rounded-full text-base font-semibold text-sky-600">
                 20
               </span>
             </button>
@@ -234,11 +234,11 @@ const DayView = () =>
                 <li className="relative mt-px flex" style={ { gridRow: '134 / span 18' } }>
                   <a
                     href="#"
-                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-indigo-50 p-2 text-xs leading-5 hover:bg-indigo-100"
+                    className="group absolute inset-1 flex flex-col overflow-y-auto rounded-lg bg-sky-50 p-2 text-xs leading-5 hover:bg-sky-100"
                   >
-                    <p className="order-1 font-semibold text-indigo-700">Sightseeing</p>
-                    <p className="order-1 text-indigo-500 group-hover:text-indigo-700">Eiffel Tower</p>
-                    <p className="text-indigo-500 group-hover:text-indigo-700">
+                    <p className="order-1 font-semibold text-sky-700">Sightseeing</p>
+                    <p className="order-1 text-sky-500 group-hover:text-sky-700">Eiffel Tower</p>
+                    <p className="text-sky-500 group-hover:text-sky-700">
                       <time dateTime="2022-01-22T11:00">11:00 AM</time>
                     </p>
                   </a>

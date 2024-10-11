@@ -7,7 +7,7 @@ import { EyeIcon, EyeSlashIcon, LinkIcon } from '@heroicons/react/24/outline'
 
 import { UserContext } from '@providers/context/UserProvider'
 import { MiscContext } from '@providers/context/MiscProvider'
-import RedirectAfterSignIn from '@lib/helpers/RedirectAfterSignIn'
+import RedirectAfterSignIn from '@components/atom/RedirectAfterSignIn'
 import { toast } from 'react-toastify'
 import { clientLog } from '@lib/helpers/winston/clientLog'
 import Modal from '@components/atom/Modal'
@@ -139,7 +139,7 @@ const LoginPage = () =>
           </h2>
           <p className="mt-2 text-sm leading-6 text-gray-500">
             Not a member?{ ' ' }
-            <a href="/auth/register" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <a href="/auth/register" className="font-semibold text-sky-600 hover:text-sky-500">
               Register for a 14 day free trial
             </a>
           </p>
@@ -158,7 +158,7 @@ const LoginPage = () =>
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     value={ userAuth.email }
                     onChange={ (e) => setUserAuth(prev => ({
                       ...prev,
@@ -176,7 +176,7 @@ const LoginPage = () =>
                   <div className="text-sm leading-6">
                     <button
                       type='button'
-                      className="font-semibold text-indigo-600 hover:text-indigo-500"
+                      className="font-semibold text-sky-600 hover:text-sky-500"
                       onClick={ () => setOpenModal1(true) }
                     >
                       Forgot password?
@@ -188,7 +188,7 @@ const LoginPage = () =>
                     id="password"
                     name="password"
                     type={ userAuth.showPassword ? 'text' : 'password' }
-                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     value={ userAuth.password }
                     onChange={ (e) => setUserAuth(prev => ({
                       ...prev,
@@ -216,7 +216,7 @@ const LoginPage = () =>
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-sky-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
                 >
                   Sign in
                 </button>
@@ -274,14 +274,14 @@ const LoginPage = () =>
       <Modal
         title={ {
           text: 'Get Login Link',
-          iconBg: 'bg-indigo-100',
-          icon: <LinkIcon className="h-6 w-6 text-indigo-600" />
+          iconBg: 'bg-sky-100',
+          icon: <LinkIcon className="h-6 w-6 text-sky-600" />
         } }
         btn={ {
           text: 'Send Link',
-          color: 'bg-indigo-600',
+          color: 'bg-sky-600',
           textColor: 'text-white',
-          hover: 'hover:bg-indigo-500',
+          hover: 'hover:bg-sky-500',
           onClick: (e) => submitForgotPw(e)
         } }
       >
@@ -295,7 +295,7 @@ const LoginPage = () =>
               id="email2"
               name="email2"
               type="email"
-              className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
               value={ email }
               onChange={ (e) => setEmail(e.target.value) }
             />

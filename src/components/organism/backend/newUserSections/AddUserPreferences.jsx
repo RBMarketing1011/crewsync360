@@ -40,7 +40,7 @@ const AddUserPreferences = () =>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex items-center justify-end gap-3">
 
                 <SunIcon className={ `${ theme === 'light'
-                  ? 'text-indigo-600'
+                  ? 'text-sky-600'
                   :
                   'text-gray-400' } h-6 w-6` } />
                 <Switch
@@ -71,7 +71,7 @@ const AddUserPreferences = () =>
                       toast.error(error.message)
                     }
                   } }
-                  className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-indigo-600 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 data-[checked]:bg-indigo-600"
+                  className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-sky-600 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 data-[checked]:bg-sky-600"
                 >
                   <span className="sr-only">Use setting</span>
                   <span
@@ -80,7 +80,7 @@ const AddUserPreferences = () =>
                   />
                 </Switch>
                 <MoonIcon className={ `${ theme === 'dark'
-                  ? 'text-indigo-600'
+                  ? 'text-sky-600'
                   :
                   'text-gray-400' } h-6 w-6` } />
 
@@ -93,7 +93,7 @@ const AddUserPreferences = () =>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 flex items-center justify-end gap-3">
 
                 <XMarkIcon className={ `${ !userPreferences.pushNotifications
-                  ? 'text-indigo-600'
+                  ? 'text-sky-600'
                   :
                   'text-gray-400' } h-6 w-6` } />
                 <Switch
@@ -102,7 +102,7 @@ const AddUserPreferences = () =>
                     ...prev,
                     pushNotifications: !userPreferences.pushNotifications
                   })) }
-                  className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-indigo-600 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 data-[checked]:bg-indigo-600"
+                  className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-sky-600 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 data-[checked]:bg-sky-600"
                 >
                   <span className="sr-only">Use setting</span>
                   <span
@@ -111,7 +111,7 @@ const AddUserPreferences = () =>
                   />
                 </Switch>
                 <CheckIcon className={ `${ userPreferences.pushNotifications
-                  ? 'text-indigo-600'
+                  ? 'text-sky-600'
                   :
                   'text-gray-400' } h-6 w-6` } />
               </dd>
@@ -134,7 +134,7 @@ const AddUserPreferences = () =>
                             ? { ...notification, enabled: !notification.enabled }
                             : notification)
                         })) }
-                        className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-100 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 data-[checked]:bg-indigo-600"
+                        className="group relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-100 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 data-[checked]:bg-sky-600"
                       >
                         <span className="sr-only">Use setting</span>
                         <span

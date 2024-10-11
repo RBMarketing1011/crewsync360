@@ -54,7 +54,7 @@ const ErrorPage = () =>
     <div className="h-screen flex flex-col justify-center">
       <main className="mx-auto w-full max-w-7xl px-6 pb-16 pt-10 sm:pb-24 lg:px-8">
         <div className="mx-auto mt-20 max-w-2xl text-center sm:mt-24">
-          <p className="text-base font-semibold leading-8 text-indigo-600">Sorry</p>
+          <p className="text-base font-semibold leading-8 text-sky-600">Sorry</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Access Denied</h1>
           <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-6 sm:text-lg sm:leading-8">
             You must login with the credentials you used before
@@ -69,7 +69,7 @@ const ErrorPage = () =>
 
                 <li key={ linkIdx } className="relative flex flex-col items-center sm:flex-row gap-y-4 gap-x-6 py-6">
                   <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg shadow-sm ring-1 ring-gray-900/10">
-                    <link.icon aria-hidden="true" className="h-6 w-6 text-indigo-600" />
+                    <link.icon aria-hidden="true" className="h-6 w-6 text-sky-600" />
                   </div>
                   <div className="flex flex-col items-center sm:items-start">
                     <h3 className="text-sm font-semibold leading-6 text-gray-900">
@@ -91,7 +91,7 @@ const ErrorPage = () =>
             }
           </ul>
           <div className="mt-10 flex justify-center">
-            <a href="/" className="text-sm font-semibold leading-6 text-indigo-600">
+            <a href="/" className="text-sm font-semibold leading-6 text-sky-600">
               <span className='mr-2' aria-hidden="true">&larr;</span>
               Back to home
             </a>

@@ -5,7 +5,7 @@ import { signIn } from 'next-auth/react'
 
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
 
-import RedirectAfterSignIn from '@lib/helpers/RedirectAfterSignIn'
+import RedirectAfterSignIn from '@components/atom/RedirectAfterSignIn'
 import { clientLog } from '@lib/helpers/winston/clientLog'
 import { UserContext } from '@providers/context/UserProvider'
 import { validatePassword } from '@lib/helpers/validatePassword'
@@ -136,7 +136,7 @@ const RegisterPage = () =>
           </h2>
           <p className="mt-2 text-sm leading-6 text-gray-500">
             Already a member?{ ' ' }
-            <a href="/auth/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <a href="/auth/login" className="font-semibold text-sky-600 hover:text-sky-500">
               Login Now
             </a>
           </p>
@@ -157,7 +157,7 @@ const RegisterPage = () =>
                       type="text"
                       required
                       autoComplete="given-name"
-                      className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                       value={ userAuth.firstname }
                       onChange={ (e) => setUserAuth(prev => ({
                         ...prev,
@@ -178,7 +178,7 @@ const RegisterPage = () =>
                       type="text"
                       required
                       autoComplete="family-name"
-                      className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                       value={ userAuth.lastname }
                       onChange={ (e) => setUserAuth(prev => ({
                         ...prev,
@@ -200,7 +200,7 @@ const RegisterPage = () =>
                     type="email"
                     required
                     autoComplete="email"
-                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     value={ userAuth.email }
                     onChange={ (e) => setUserAuth(prev => ({
                       ...prev,
@@ -240,7 +240,7 @@ const RegisterPage = () =>
                     type={ `${ userAuth.showPassword ? 'text' : 'password' }` }
                     required
                     autoComplete="current-password"
-                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     value={ userAuth.password }
                     onChange={ (e) => setUserAuth(prev => ({
                       ...prev,
@@ -276,7 +276,7 @@ const RegisterPage = () =>
                     type={ `${ userAuth.showConfirmPw ? 'text' : 'password' }` }
                     required
                     autoComplete="current-password"
-                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                     value={ userAuth.confirmPw }
                     onChange={ (e) => setUserAuth(prev => ({
                       ...prev,
@@ -304,7 +304,7 @@ const RegisterPage = () =>
               <div>
                 <button
                   type="submit"
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-sky-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
                 >
                   Register
                 </button>

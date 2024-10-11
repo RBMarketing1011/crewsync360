@@ -2,6 +2,11 @@
   "name": "crewsync360",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Anthony Reynolds",
+    "email": "info@rbmarketingandanalytics.com",
+    "url": "https://rbmarketingandanalytics.com"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

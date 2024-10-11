@@ -20,11 +20,11 @@ const ProgressBar = ({ state }) =>
 
                   <>
                     <div aria-hidden="true" className="absolute inset-0 flex items-center">
-                      <div className="h-0.5 w-full bg-indigo-600" />
+                      <div className="h-0.5 w-full bg-sky-600" />
                     </div>
                     <a
                       href="#"
-                      className="relative flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-900"
+                      className="relative flex h-8 w-8 items-center justify-center rounded-full bg-sky-600 hover:bg-sky-900"
                     >
                       <CheckIcon aria-hidden="true" className="h-5 w-5 text-white" />
                       <span className="sr-only">{ step.name }</span>
@@ -42,9 +42,9 @@ const ProgressBar = ({ state }) =>
                       <a
                         href="#"
                         aria-current="step"
-                        className="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"
+                        className="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-sky-600 bg-white"
                       >
-                        <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-indigo-600" />
+                        <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-sky-600" />
                         <span className="sr-only">{ step.name }</span>
                       </a>
                     </>

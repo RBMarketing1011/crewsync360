@@ -212,8 +212,6 @@ const NewUserPage = () =>
     }
   }, [ progress ])
 
-  const options = { clientSecret }
-
   const updateProgress = (currentIdx) =>
   {
     setProgress(prev =>
@@ -360,14 +358,6 @@ const NewUserPage = () =>
     {
       toast.error(error.message)
     }
-  }
-
-  //  NEED TO REFACTOR ONCE STRIPE IS SETUP
-  const submitBillingDetails = async (e) =>
-  {
-    e.preventDefault()
-
-    moveToNextStep()
   }
 
   const submitAdditionalUsers = async (e) =>

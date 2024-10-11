@@ -7,12 +7,11 @@ import ProgressBar from '@components/atom/ProgressBar'
 const NewUserCard = ({ submit, children }) =>
 {
   const {
-    progressState, currentState, emailErrorState
+    progressState, currentState
   } = useContext(NewUserScreenContext)
 
   const [ progress, setProgress ] = progressState
   const [ current, setCurrent ] = currentState
-  const [ emailError, setEmailError ] = emailErrorState
 
   const skipPage = () =>
   {
@@ -82,7 +81,7 @@ const NewUserCard = ({ submit, children }) =>
 
           <button
             type="button"
-            className="rounded-md px-3 py-2 text-sm font-semibold text-indigo-600 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="rounded-md px-3 py-2 text-sm font-semibold text-sky-600 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
             onClick={ skipPage }
           >
             Skip
@@ -94,7 +93,7 @@ const NewUserCard = ({ submit, children }) =>
 
             <button
               type="button"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
               onClick={ skipPage }
             >
               Next &rarr;
@@ -109,8 +108,8 @@ const NewUserCard = ({ submit, children }) =>
               :
 
               <button
-                type="button"
-                className="rounded-md bg-indigo-200 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:cursor-default"
+                type="submit"
+                className="rounded-md bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
               >
                 Next &rarr;
               </button>

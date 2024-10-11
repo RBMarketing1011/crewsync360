@@ -36,7 +36,7 @@ const Layout = ({ children }) =>
                 </defs>
                 <rect fill="url(#e87443c8-56e4-4c20-9111-55b82fa704e3)" width="100%" height="100%" strokeWidth={ 0 } />
               </svg>
-              <figure className="hidden border-l border-indigo-600 pl-8 lg:block lg:m-auto">
+              <figure className="hidden border-l border-sky-600 pl-8 lg:block lg:m-auto">
                 <blockquote className="text-xl font-semibold leading-8 tracking-tight text-gray-900">
                   <p>
                     “Juggernaut360 is the best moving company software ever! It has streamlined our operations, improved customer satisfaction, and increased our efficiency. Highly recommend!”

@@ -2,6 +2,7 @@ import connectDB from '@db/connectDB'
 import CompanyAccount from '@db/models/account'
 import User from '@db/models/user'
 import encryptPw from '@lib/encrypt/encryptPw'
+import { uploadUserImage } from '@lib/helpers/fs/images/uploadUserImage'
 
 import fs from 'fs'
 import path from 'path'
@@ -193,48 +194,13 @@ const updateUserInAccount = async (req, { params }) =>
     user.notifications = notifications ?? user.notifications
 
     // If image data is provided (data:image format), validate and save it to the /uploads folder
+
     if (image && image.startsWith('data:image'))
     {
-      const [ header, base64Data ] = image.split(';base64,')
-      const fileType = header.split(':')[ 1 ] // Extract file type, e.g., "image/jpeg"
+      const upload = await uploadUserImage(accountId, userId, image)
 
-      // Check if the file type is allowed
-      if (!ALLOWED_IMAGE_TYPES.includes(fileType))
-      {
-        throw new Error('Invalid image type. Only JPEG, PNG, and WebP are allowed.')
-      }
-
-      // Check the file size (since base64 encoding inflates the size by ~33%, we calculate accordingly)
-      const imageBuffer = Buffer.from(base64Data, 'base64')
-      const fileSize = imageBuffer.length
-      if (fileSize > MAX_FILE_SIZE)
-      {
-        throw new Error('Image size too large. Maximum allowed size is 100KB.')
-      }
-
-      // Define the file extension
-      const fileExtension = fileType.split('/')[ 1 ] // Extract file extension (e.g., jpeg, png, webp)
-      const fileName = `${ userId }.${ fileExtension }` // Define the new file name
-      const filePath = path.join(process.cwd(), 'public/uploads', fileName)
-
-      // Check if there's an existing image and delete it
-      if (user.image)
-      {
-        const oldImagePath = path.join(process.cwd(), 'public/uploads', path.basename(user.image))
-        if (fs.existsSync(oldImagePath))
-        {
-          fs.unlinkSync(oldImagePath) // Delete the old image
-        }
-      }
-
-      // Save the new image file to the /public/uploads folder
-      fs.writeFileSync(filePath, base64Data, { encoding: 'base64' })
-
-      // Update the image URL in the user object
-      user.image = `/uploads/${ fileName }`
+      if (!upload) throw new Error('Error uploading image')
     }
-
-    await user.save()
 
     return Response.json({ success: 'User updated' }, { status: 200 })
   } catch (error)

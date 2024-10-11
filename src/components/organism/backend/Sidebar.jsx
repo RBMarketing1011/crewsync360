@@ -156,14 +156,14 @@ const Sidebar = ({ children, accountId }) =>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-indigo-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                  ? 'bg-gray-50 text-sky-600'
+                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
                               >
                                 <item.icon
                                   aria-hidden="true"
                                   className={ `${ path === item.href
-                                    ? 'text-indigo-600'
-                                    : 'text-gray-400 group-hover:text-indigo-600' }
+                                    ? 'text-sky-600'
+                                    : 'text-gray-400 group-hover:text-sky-600' }
                                     h-6 w-6 shrink-0`}
                                 />
                                 { item.name }
@@ -186,14 +186,14 @@ const Sidebar = ({ children, accountId }) =>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-indigo-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                  ? 'bg-gray-50 text-sky-600'
+                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
                               >
                                 <item.icon
                                   aria-hidden="true"
                                   className={ `${ path === item.href
-                                    ? 'text-indigo-600'
-                                    : 'text-gray-400 group-hover:text-indigo-600' }
+                                    ? 'text-sky-600'
+                                    : 'text-gray-400 group-hover:text-sky-600' }
                                     h-6 w-6 shrink-0`}
                                 />
                                 { item.name }
@@ -216,14 +216,14 @@ const Sidebar = ({ children, accountId }) =>
                               <a
                                 href={ item.href }
                                 className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-indigo-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                  ? 'bg-gray-50 text-sky-600'
+                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
                               >
                                 <item.icon
                                   aria-hidden="true"
                                   className={ `${ path === item.href
-                                    ? 'text-indigo-600'
-                                    : 'text-gray-400 group-hover:text-indigo-600' }
+                                    ? 'text-sky-600'
+                                    : 'text-gray-400 group-hover:text-sky-600' }
                                     h-6 w-6 shrink-0`}
                                 />
                                 { item.name }
@@ -238,11 +238,11 @@ const Sidebar = ({ children, accountId }) =>
                     <li className="mt-auto">
                       <a
                         href="#"
-                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-sky-600"
                       >
                         <Cog6ToothIcon
                           aria-hidden="true"
-                          className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                          className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-sky-600"
                         />
                         Settings
                       </a>
@@ -280,15 +280,15 @@ const Sidebar = ({ children, accountId }) =>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                              ? 'bg-sky-700 text-sky-50'
+                              : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
                               className={ `${ path === item.href
-                                ? 'text-indigo-600'
-                                : 'text-gray-400 group-hover:text-indigo-600' }
-                                    h-6 w-6 shrink-0`}
+                                ? 'text-sky-50'
+                                : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out` }
                             />
                             { item.name }
                           </a>
@@ -310,15 +310,15 @@ const Sidebar = ({ children, accountId }) =>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                              ? 'bg-sky-700 text-sky-50'
+                              : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
                               className={ `${ path === item.href
-                                ? 'text-indigo-600'
-                                : 'text-gray-400 group-hover:text-indigo-600' }
-                                    h-6 w-6 shrink-0`}
+                                ? 'text-sky-50'
+                                : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out`}
                             />
                             { item.name }
                           </a>
@@ -340,15 +340,15 @@ const Sidebar = ({ children, accountId }) =>
                           <a
                             href={ item.href }
                             className={ `${ path === item.href
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-indigo-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                              ? 'bg-sky-700 text-sky-50'
+                              : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
                               className={ `${ path === item.href
-                                ? 'text-indigo-600'
-                                : 'text-gray-400 group-hover:text-indigo-600' }
-                                    h-6 w-6 shrink-0`}
+                                ? 'text-sky-50'
+                                : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out`}
                             />
                             { item.name }
                           </a>
@@ -362,11 +362,11 @@ const Sidebar = ({ children, accountId }) =>
                 <li className="mt-auto">
                   <a
                     href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-sky-600"
                   >
                     <Cog6ToothIcon
                       aria-hidden="true"
-                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-sky-600"
                     />
                     Settings
                   </a>
@@ -425,10 +425,27 @@ const Sidebar = ({ children, accountId }) =>
                   <Menu as="div" className="relative">
                     <MenuButton className="-m-1.5 flex items-center p-1.5">
                       <span className="sr-only">Open user menu</span>
-                      <div
-                        className="flex justify-center items-center bg-indigo-100 text-indigo-600 rounded-full p-1 ring-1 ring-indigo-600 w-7 h-7 text-sm">
-                        { session?.user?.firstname?.charAt(0).toUpperCase() }{ session?.user?.lastname?.charAt(0).toUpperCase() }
-                      </div>
+
+                      {
+                        session &&
+                          session?.user?.image ?
+
+                          <Image
+                            src={ session.user.image }
+                            alt={ session.user.firstname }
+                            width={ 32 }
+                            height={ 32 }
+                            className="rounded-full w-7 h-7"
+                          />
+
+                          :
+
+                          <div
+                            className="flex justify-center items-center bg-sky-100 text-sky-600 rounded-full p-1 ring-1 ring-sky-600 w-7 h-7 text-sm">
+                            { session?.user?.firstname?.charAt(0).toUpperCase() }{ session?.user?.lastname?.charAt(0).toUpperCase() }
+                          </div>
+                      }
+
                       <span className="hidden lg:flex lg:items-center">
                         <span aria-hidden="true" className="ml-4 text-sm font-semibold leading-6 text-gray-900">
                           { session?.user?.firstname }

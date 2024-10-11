@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react'
 import { NewUserScreenContext } from '@providers/context/NewUserScreenProvider'
 import { UserContext } from '@providers/context/UserProvider'
 import Image from 'next/image'
+import { parseSingleImageData } from '@lib/helpers/fs/images/parseSingleImageData'
 
 const VerifyUserDetails = () =>
 {
@@ -114,45 +115,20 @@ const VerifyUserDetails = () =>
             name="profilePic"
             id="profilePic"
             accept="image/*"
-            className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 hover:file:cursor-pointer"
-            onChange={ (e) =>
+            className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-sky-50 file:text-sky-700 hover:file:bg-sky-100 hover:file:cursor-pointer"
+            onChange={ async (e) =>
             {
-              const file = e.target.files[ 0 ]
+              const image = await parseSingleImageData(e)
 
-              if (file)
-              {
-                const allowedTypes = [ 'image/jpeg', 'image/png', 'image/webp' ]
-                const maxSize = 100 * 1024 // 100 KB
-
-                // Check if the file type is valid
-                if (!allowedTypes.includes(file.type))
-                {
-                  alert('Invalid file type. Please upload an image in JPEG, PNG, or WebP format.')
-                  return
-                }
-
-                // Check if the file size is within the limit
-                if (file.size > maxSize)
-                {
-                  alert('File is too large. Please upload an image smaller than 100KB.')
-                  return
-                }
-
-                const reader = new FileReader()
-                reader.onloadend = () =>
-                {
-                  setUserInfo(prev => ({
-                    ...prev,
-                    image: reader.result.toString(), // Base64 string
-                  }))
-                  console.log(userInfo) // The userInfo will include the base64 image data
-                }
-                reader.readAsDataURL(file)
-              }
+              setUserInfo(prev => ({
+                ...prev,
+                image
+              }))
             } }
           />
         </div>
         <div className='col-span-2 md:col-span-1 flex justify-center items-center'>
+          { console.log(userInfo.image) }
           {
             userInfo?.image &&
             <div className='w-20 h-20 rounded-full overflow-hidden'>

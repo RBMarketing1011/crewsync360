@@ -59,7 +59,7 @@ const NewUserCompleted = () =>
     <main className="flex flex-col items-center justify-center">
       <div className="bg-white p-8 text-center">
         <div className="flex justify-center mb-4">
-          <SparklesIcon className="h-8 w-8 text-indigo-500" />
+          <SparklesIcon className="h-8 w-8 text-sky-500" />
         </div>
         <h1 className="text-2xl font-bold mb-2">All Set, You&apos;re Good to Go!</h1>
         <p className="text-gray-700 mb-6">
