@@ -20,7 +20,6 @@ const Home = () =>
       <CTA2 />
       <Content />
       <Blog />
-      <Subscribe />
     </main>
   )
 }

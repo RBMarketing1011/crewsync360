@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useContext } from 'react'
+import { usePathname } from 'next/navigation'
 import { MiscContext } from '@providers/context/MiscProvider'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -19,6 +20,8 @@ const Navbar = () =>
   const { mobileMenuState } = useContext(MiscContext)
   const [ mobileMenuOpen, setMobileMenuOpen ] = mobileMenuState
   const [ isScrolled, setIsScrolled ] = useState(false)
+
+  const path = usePathname()
 
   useEffect(() =>
   {
@@ -63,11 +66,27 @@ const Navbar = () =>
             />
           </a>
           <div className="hidden lg:flex lg:gap-x-12">
-            { navigation.map((item) => (
-              <a key={ item.name } href={ item.href } className="text-sm font-semibold leading-6 text-gray-900">
-                { item.name }
-              </a>
-            )) }
+
+            {
+              navigation.map((item) => (
+
+                <a
+                  key={ item.name }
+                  href={ item.href }
+                  className={ `${ path === item.href
+                    ?
+                    'text-sky-600 after:bg-sky-600 after:w-full'
+                    :
+                    'text-gray-900' }
+                    text-sm font-semibold leading-6 hover:text-sky-600 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-sky-600 after:transition-all after:duration-300 hover:after:w-full` }
+                >
+                  { item.name }
+                </a>
+
+
+              ))
+            }
+
           </div>
         </div>
         <div className="flex lg:hidden">
@@ -81,7 +100,7 @@ const Navbar = () =>
           </button>
         </div>
         <div className="hidden lg:flex items-center gap-x-5">
-          <a href="/auth/register" className="rounded-full bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <a href="/auth/register" className="rounded-full bg-sky-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600">
             Get Started Now
           </a>
           <a href="/auth/login" className="text-sm font-semibold leading-6 text-gray-900">

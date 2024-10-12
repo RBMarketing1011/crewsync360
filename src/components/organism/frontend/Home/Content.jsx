@@ -63,7 +63,7 @@ const Content = () =>
           </div>
           <div>
             <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-indigo-600">Company values</p>
+              <p className="text-base font-semibold leading-7 text-sky-600">Company values</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 On a mission to empower remote teams
               </h1>
@@ -95,7 +95,7 @@ const Content = () =>
               )) }
             </dl>
             <div className="mt-10 flex">
-              <a href="#" className="text-base font-semibold leading-7 text-indigo-600">
+              <a href="#" className="text-base font-semibold leading-7 text-sky-600">
                 Learn more about our company <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

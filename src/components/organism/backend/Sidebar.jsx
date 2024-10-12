@@ -155,16 +155,16 @@ const Sidebar = ({ children, accountId }) =>
                             <li key={ v4() }>
                               <a
                                 href={ item.href }
-                                className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-sky-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                className={ `${ path.includes(item.href)
+                                  ? 'bg-sky-700 text-sky-50'
+                                  : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                               >
                                 <item.icon
                                   aria-hidden="true"
-                                  className={ `${ path === item.href
-                                    ? 'text-sky-600'
-                                    : 'text-gray-400 group-hover:text-sky-600' }
-                                    h-6 w-6 shrink-0`}
+                                  className={ `${ path.includes(item.href)
+                                    ? 'text-sky-50'
+                                    : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out` }
                                 />
                                 { item.name }
                               </a>
@@ -185,16 +185,16 @@ const Sidebar = ({ children, accountId }) =>
                             <li key={ v4() }>
                               <a
                                 href={ item.href }
-                                className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-sky-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                className={ `${ path.includes(item.href)
+                                  ? 'bg-sky-700 text-sky-50'
+                                  : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                               >
                                 <item.icon
                                   aria-hidden="true"
-                                  className={ `${ path === item.href
-                                    ? 'text-sky-600'
-                                    : 'text-gray-400 group-hover:text-sky-600' }
-                                    h-6 w-6 shrink-0`}
+                                  className={ `${ path.includes(item.href)
+                                    ? 'text-sky-50'
+                                    : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out` }
                                 />
                                 { item.name }
                               </a>
@@ -215,16 +215,16 @@ const Sidebar = ({ children, accountId }) =>
                             <li key={ v4() }>
                               <a
                                 href={ item.href }
-                                className={ `${ path === item.href
-                                  ? 'bg-gray-50 text-sky-600'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-sky-600' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6` }
+                                className={ `${ path.includes(item.href)
+                                  ? 'bg-sky-700 text-sky-50'
+                                  : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                               >
                                 <item.icon
                                   aria-hidden="true"
-                                  className={ `${ path === item.href
-                                    ? 'text-sky-600'
-                                    : 'text-gray-400 group-hover:text-sky-600' }
-                                    h-6 w-6 shrink-0`}
+                                  className={ `${ path.includes(item.href)
+                                    ? 'text-sky-50'
+                                    : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out` }
                                 />
                                 { item.name }
                               </a>
@@ -237,12 +237,17 @@ const Sidebar = ({ children, accountId }) =>
                     </li>
                     <li className="mt-auto">
                       <a
-                        href="#"
-                        className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-sky-600"
+                        href={ `/account/${ accountId }/settings` }
+                        className={ `${ path.includes(`/account/${ accountId }/settings`)
+                          ? 'bg-sky-700 text-sky-50'
+                          : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                       >
                         <Cog6ToothIcon
                           aria-hidden="true"
-                          className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-sky-600"
+                          className={ `${ path.includes(`/account/${ accountId }/settings`)
+                            ? 'text-sky-50'
+                            : 'text-sky-700 group-hover:text-sky-50' }
+                                    h-6 w-6 shrink-0 transition-all ease-in-out` }
                         />
                         Settings
                       </a>
@@ -279,13 +284,13 @@ const Sidebar = ({ children, accountId }) =>
                         <li key={ v4() }>
                           <a
                             href={ item.href }
-                            className={ `${ path === item.href
+                            className={ `${ path.includes(item.href)
                               ? 'bg-sky-700 text-sky-50'
                               : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
-                              className={ `${ path === item.href
+                              className={ `${ path.includes(item.href)
                                 ? 'text-sky-50'
                                 : 'text-sky-700 group-hover:text-sky-50' }
                                     h-6 w-6 shrink-0 transition-all ease-in-out` }
@@ -309,13 +314,13 @@ const Sidebar = ({ children, accountId }) =>
                         <li key={ v4() }>
                           <a
                             href={ item.href }
-                            className={ `${ path === item.href
+                            className={ `${ path.includes(item.href)
                               ? 'bg-sky-700 text-sky-50'
                               : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
-                              className={ `${ path === item.href
+                              className={ `${ path.includes(item.href)
                                 ? 'text-sky-50'
                                 : 'text-sky-700 group-hover:text-sky-50' }
                                     h-6 w-6 shrink-0 transition-all ease-in-out`}
@@ -339,13 +344,13 @@ const Sidebar = ({ children, accountId }) =>
                         <li key={ v4() }>
                           <a
                             href={ item.href }
-                            className={ `${ path === item.href
+                            className={ `${ path.includes(item.href)
                               ? 'bg-sky-700 text-sky-50'
                               : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                           >
                             <item.icon
                               aria-hidden="true"
-                              className={ `${ path === item.href
+                              className={ `${ path.includes(item.href)
                                 ? 'text-sky-50'
                                 : 'text-sky-700 group-hover:text-sky-50' }
                                     h-6 w-6 shrink-0 transition-all ease-in-out`}
@@ -361,12 +366,17 @@ const Sidebar = ({ children, accountId }) =>
                 </li>
                 <li className="mt-auto">
                   <a
-                    href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-sky-600"
+                    href={ `account/${ accountId }/settings` }
+                    className={ `${ path.includes(`account/${ accountId }/settings`)
+                      ? 'bg-sky-700 text-sky-50'
+                      : 'text-sky-700 hover:bg-sky-700 hover:text-sky-50' } group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 transition-all ease-in-out` }
                   >
                     <Cog6ToothIcon
                       aria-hidden="true"
-                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-sky-600"
+                      className={ `${ path.includes(`account/${ accountId }/settings`)
+                        ? 'text-sky-50'
+                        : 'text-sky-700 group-hover:text-sky-50' }
+                        h-6 w-6 shrink-0 transition-all ease-in-out`}
                     />
                     Settings
                   </a>
