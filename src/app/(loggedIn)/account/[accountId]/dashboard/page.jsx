@@ -8,10 +8,6 @@ const Dashboard = ({ params }) =>
 
   return (
     <>
-      <PageHeadingWithBreadcrumbs
-        title='Dashboard'
-        accountId={ accountId }
-      />
       <AccountDashboardPage
         accountId={ accountId }
       />

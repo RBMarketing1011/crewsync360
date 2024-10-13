@@ -193,6 +193,8 @@ const updateUserInAccount = async (req, { params }) =>
     user.pushNotifications = pushNotifications ?? user.pushNotifications
     user.notifications = notifications ?? user.notifications
 
+    await user.save()
+
     // If image data is provided (data:image format), validate and save it to the /uploads folder
 
     if (image && image.startsWith('data:image'))

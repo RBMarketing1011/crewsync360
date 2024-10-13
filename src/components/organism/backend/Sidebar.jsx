@@ -387,8 +387,8 @@ const Sidebar = ({ children, accountId }) =>
         </div>
 
         <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 lg:mx-auto lg:max-w-8xl lg:px-8">
-            <div className="flex h-16 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-0 lg:shadow-none">
+          <div className="sticky top-0 z-40 lg:mx-auto lg:max-w-8xl lg:px-8 bg-white">
+            <div className="flex h-16 items-center gap-x-4 border-b border-gray-200 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-0 lg:shadow-none">
               <button
                 type="button"
                 onClick={ () => setMobileMenuOpen(true) }
@@ -501,7 +501,7 @@ const Sidebar = ({ children, accountId }) =>
             </div>
           </div>
 
-          <main className="py-3">
+          <main>
             <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
               {/* Your content */ }
               { children }

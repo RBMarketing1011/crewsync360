@@ -2,7 +2,7 @@
 
 import { useContext } from 'react'
 import { NewUserScreenContext } from '@providers/context/NewUserScreenProvider'
-import ProgressBar from '@components/atom/ProgressBar'
+import ProgressBar from '@components/atom/newUser/ProgressBar'
 
 const NewUserCard = ({ submit, children }) =>
 {
