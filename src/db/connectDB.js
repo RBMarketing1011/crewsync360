@@ -6,18 +6,25 @@ const connectDB = async () =>
 {
   mongoose.set('strictQuery', true)
 
-  // if DB is already connected dont connect twice
-  connected && console.log('Previous DB Connected')
+  // If DB is already connected, don't connect again
+  if (connected)
+  {
+    console.log('Previous DB Connected')
+    return
+  }
 
-  //connect to DB
+  // Connect to DB
   try
   {
-    await mongoose.connect(process.env.MONGO_URI)
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     connected = true
     console.log('DB Connected')
   } catch (error)
   {
-    console.log(error)
+    console.log('DB Connection Error:', error)
   }
 }
 

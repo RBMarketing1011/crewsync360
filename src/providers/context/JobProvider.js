@@ -7,6 +7,7 @@ const JobContext = createContext()
 const JobProvider = ({ children }) =>
 {
   const [ job, setJob ] = useState(null)
+  const [ calendar, setCalendar ] = useState(null)
 
   return (
     <JobContext.Provider value={ {

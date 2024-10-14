@@ -1,5 +1,4 @@
 import AccountDashboardPage from '@components/page/account/dashboard/AccountDashboardPage'
-import PageHeadingWithBreadcrumbs from '@components/molecule/PageHeadingWithBreadcrumbs'
 
 
 const Dashboard = ({ params }) =>

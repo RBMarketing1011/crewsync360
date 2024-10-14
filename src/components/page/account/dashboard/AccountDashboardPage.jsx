@@ -11,18 +11,28 @@ import AreaChart from '@components/atom/charts/AreaChart'
 import PolarChart from '@components/atom/charts/PolarChart'
 import RadarChart from '@components/atom/charts/RadarChart'
 import Accordion from '@components/atom/Accordian'
+import Rating from '@components/atom/StarRating'
 
 const reviews = {
-  average: 4,
-  totalCount: 1624,
   counts: [
-    { rating: 5, count: 1019 },
-    { rating: 4, count: 162 },
+    { rating: 5, count: 2429 },
+    { rating: 4, count: 172 },
     { rating: 3, count: 97 },
     { rating: 2, count: 199 },
     { rating: 1, count: 147 },
   ],
+  // Calculate total count of reviews
+  get totalCount ()
+  {
+    return this.counts.reduce((acc, { count }) => acc + count, 0)
+  },
+  // Calculate average rating based on counts and ratings
+  get average ()
+  {
+    return this.counts.reduce((acc, { rating, count }) => acc + (rating * count), 0) / this.totalCount
+  },
 }
+
 
 function classNames (...classes)
 {
@@ -34,22 +44,14 @@ const accordianItems = [
     title: 'Customer Reviews',
     content: <div>
       <div className="mt-3 flex items-center">
+        <p className="mr-3 text-lg text-sky-50 bg-sky-700 rounded-full p-2">{ reviews.average.toFixed(1) }</p>
         <div>
           <div className="flex items-center">
-            { [ 0, 1, 2, 3, 4 ].map((rating) => (
-              <StarIcon
-                key={ rating }
-                aria-hidden="true"
-                className={ classNames(
-                  reviews.average > rating ? 'text-yellow-400' : 'text-gray-300',
-                  'h-5 w-5 flex-shrink-0',
-                ) }
-              />
-            )) }
+            <Rating average={ reviews.average } />
           </div>
           <p className="sr-only">{ reviews.average } out of 5 stars</p>
         </div>
-        <p className="ml-2 text-sm text-gray-900">Based on { reviews.totalCount } reviews</p>
+        <p className="ml-2 text-sm text-gray-900">{ reviews.totalCount } reviews</p>
       </div>
 
       <div className="mt-6">
@@ -138,12 +140,82 @@ const accordianItems = [
     </div>,
   },
   {
-    title: 'Revenue',
-    content: 'Create a new invoice',
+    title: 'Invoices',
+    content: <div>
+      <div>
+        <dl className="divide-y divide-gray-100">
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Pending
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              4
+            </dd>
+          </div>
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Paid
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              7
+            </dd>
+          </div>
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Outstanding
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              2
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <a
+        href="#"
+        className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
+      >
+        View All Invoices
+      </a>
+    </div>,
   },
   {
-    title: 'Metrics',
-    content: 'Create a new job',
+    title: 'Jobs',
+    content: <div>
+      <div>
+        <dl className="divide-y divide-gray-100">
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Pending
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              8
+            </dd>
+          </div>
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Completed
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              4
+            </dd>
+          </div>
+          <div className="px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900 sm:col-span-2">
+              Coming Up
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-1 sm:mt-0">
+              22
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <a
+        href="#"
+        className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
+      >
+        View All Jobs
+      </a>
+    </div>,
   },
 ]
 

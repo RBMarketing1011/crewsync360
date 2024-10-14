@@ -1,10 +1,11 @@
+import CalendarPage from '@components/page/account/calendar/CalendarPage'
 
-const Calendar = () =>
+const Calendar = ({ params }) =>
 {
+  const { accountId } = params
+
   return (
-    <main>
-      Calendar
-    </main>
+    <CalendarPage accountId={ accountId } />
   )
 }
 
