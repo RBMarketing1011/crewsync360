@@ -24,6 +24,11 @@
             "date": 1728794809793,
             "name": "debug\\10-13-2024\\client.log",
             "hash": "c97aaace761ca81204e04d3f80ed8a7321eb833bdc89581155ad089c319845d6"
+        },
+        {
+            "date": 1729199485369,
+            "name": "debug\\10-17-2024\\client.log",
+            "hash": "84e584328b4f25658bc06ed5d43903f3307da0969cd7749df5db46881d99ff95"
         }
     ],
     "hashType": "sha256"

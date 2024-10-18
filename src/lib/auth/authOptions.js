@@ -130,6 +130,8 @@ const authOptions = {
   ],
   session: {
     strategy: 'jwt',
+    maxAge: 24 * 60 * 60 * 1000, // 1 day
+    updateAge: 60 * 60 * 1000, // 1 hour
   },
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
@@ -202,6 +204,10 @@ const authOptions = {
       session.account = token.account
       return session
     },
+    async redirect ({ url, baseUrl })
+    {
+      return `${ baseUrl }/account/new-user`
+    }
   },
   pages: {
     signIn: '/auth/login',

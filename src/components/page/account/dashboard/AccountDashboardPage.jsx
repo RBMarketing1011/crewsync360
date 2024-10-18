@@ -231,7 +231,7 @@ const AccountDashboardPage = ({ accountId }) =>
 
   return (
     <>
-      <div className='sticky top-16 p-3 z-40 -mx-3  bg-white border-b border-gray-200 flex items-center justify-between'>
+      <div className='sticky top-16 p-3 -mx-3  bg-white border-b border-gray-200 flex items-center justify-between'>
         <ColorTabs
           tabs={ navigation }
         />

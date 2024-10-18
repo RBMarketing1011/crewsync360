@@ -6,7 +6,6 @@ import CTA2 from '@components/organism/frontend/Home/CTA2'
 import Features from '@components/organism/frontend/Home/Features'
 import HeroSection from '@components/organism/frontend/Home/Hero'
 import Pricing from '@components/organism/frontend/Home/Pricing'
-import Subscribe from '@components/organism/frontend/Home/Subscribe'
 
 const Home = () =>
 {
