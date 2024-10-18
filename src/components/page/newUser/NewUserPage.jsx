@@ -18,6 +18,7 @@ import { UserContext } from '@providers/context/UserProvider'
 import NewUserCard from '@components/organism/backend/newUserSections/NewUserCard'
 
 import { toast } from 'react-toastify'
+import RedirectAfterSignIn from '@components/atom/RedirectAfterSignIn'
 
 const NewUserPage = () =>
 {
@@ -370,7 +371,6 @@ const NewUserPage = () =>
 
   return (
     <main className='w-screen h-screen flex justify-center items-start md:items-center'>
-
       {
         loading ?
           <div className='w-full h-full flex flex-col justify-center items-center animate-scale-up'>

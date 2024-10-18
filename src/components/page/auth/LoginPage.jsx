@@ -26,7 +26,10 @@ const LoginPage = () =>
   {
     try
     {
-      const req = await signIn(social)
+      const req = await signIn(social, {
+        callbackUrl: '',
+        redirect: false
+      })
 
       if (req?.error)
       {
@@ -61,6 +64,8 @@ const LoginPage = () =>
       const req = await signIn('credentials', {
         email: userAuth.email,
         password: userAuth.password,
+        callbackUrl: '',
+        redirect: false
       })
 
       if (req?.error)

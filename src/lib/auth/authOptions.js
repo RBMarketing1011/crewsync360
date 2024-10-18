@@ -30,8 +30,6 @@ const authOptions = {
       from: process.env.EMAIL_FROM,
       sendVerificationRequest: async ({ identifier: email, url, token, baseUrl, provider }) =>
       {
-
-        console.log(baseUrl)
         await transporter.sendMail({
           from: process.env.EMAIL_FROM,
           to: email,
@@ -204,10 +202,6 @@ const authOptions = {
       session.account = token.account
       return session
     },
-    async redirect ({ url, baseUrl })
-    {
-      return `${ baseUrl }/account/new-user`
-    }
   },
   pages: {
     signIn: '/auth/login',
