@@ -26,13 +26,9 @@ const uploadImageandSaveToUser = async (req, { params }) =>
     // Create the base directory path
     const dir = path.join(process.cwd(), 'public', 'uploads', accountId, 'images', 'profilepic')
 
-    // Log the directory path
-    console.log(`Directory to be created: ${ dir }`)
-
     // Create the directory if it does not exist
     if (!fs.existsSync(dir))
     {
-      console.log(`Creating directory: ${ dir }`)
       fs.mkdirSync(dir, { recursive: true }) // Create directories recursively
     }
 
@@ -41,7 +37,6 @@ const uploadImageandSaveToUser = async (req, { params }) =>
     const filePath = path.join(dir, filename)
 
     // Write the image file
-    console.log(`Writing file to: ${ filePath }`)
     fs.writeFileSync(filePath, buffer) // Using synchronous method for simplicity
 
     // Save the image path to the user's profile

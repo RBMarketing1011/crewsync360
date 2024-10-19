@@ -9,7 +9,6 @@ const connectDB = async () =>
   // If DB is already connected, don't connect again
   if (connected)
   {
-    console.log('Previous DB Connected')
     return
   }
 
@@ -21,10 +20,9 @@ const connectDB = async () =>
       useUnifiedTopology: true,
     })
     connected = true
-    console.log('DB Connected')
   } catch (error)
   {
-    console.log('DB Connection Error:', error)
+    console.error('DB Connection Error:', error)
   }
 }
 

@@ -27,8 +27,6 @@ const fetchEventsForPeriod = async (accountId, startDate, endDate) =>
 
     const res = await req.json() // Assume this returns an array of job objects
 
-    console.log(res)
-
     if (res.success)
     {
       // Format the job objects into the required event structure

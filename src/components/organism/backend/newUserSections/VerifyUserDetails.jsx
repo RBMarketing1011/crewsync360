@@ -128,7 +128,6 @@ const VerifyUserDetails = () =>
           />
         </div>
         <div className='col-span-2 md:col-span-1 flex justify-center items-center'>
-          { console.log(userInfo.image) }
           {
             userInfo?.image &&
             <div className='w-20 h-20 rounded-full overflow-hidden'>

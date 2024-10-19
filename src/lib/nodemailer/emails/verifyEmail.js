@@ -1,3 +1,4 @@
+import { logger } from '@lib/helpers/winston/logger'
 import { transporter } from '../Transporter'
 
 export const verifyEmail = (name, email, token) =>
@@ -58,7 +59,11 @@ export const verifyEmail = (name, email, token) =>
       `, // html body
     })
 
-    console.log("Message sent: %s", info.messageId)
+    logger.info({
+      'Message sent': info.messageId,
+      'Source': 'nodemailer',
+      email: 'verify email'
+    })
     // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
   }
 

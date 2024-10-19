@@ -10,8 +10,6 @@ export const verifyToken = async (email) =>
     const id = v4()
     const token = id.slice(0, 6)
 
-    console.log(id)
-
     await connectDB()
 
     const tokenFound = await VerificationToken.findOne({ identifier: email })

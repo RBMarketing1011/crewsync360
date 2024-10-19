@@ -2,17 +2,10 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 
-function classNames (...classes)
-{
-  return classes.filter(Boolean).join(' ')
-}
-
 const ColorTabs = ({ tabs }) =>
 {
   const path = usePathname()
   const router = useRouter()
-
-  console.log(path)
 
   return (
     <div>

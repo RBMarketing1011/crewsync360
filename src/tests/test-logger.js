@@ -49,4 +49,3 @@ const testLogging = () =>
 
 // Execute the test
 testLogging()
-console.log('Test logging executed. Check the debug folder for logs.')

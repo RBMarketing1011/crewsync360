@@ -43,12 +43,6 @@ export const validatePassword = (p) =>
     strength += 20
   }
 
-  // Console Log error and strength to verify the output
-  // if (errors.length > 0)
-  // {
-  //   console.log(errors.join("\n"))
-  // }
-
   if (strength > 0 && strength <= 100)
   {
     return strength
