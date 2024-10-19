@@ -148,12 +148,38 @@ export const generateCalendarPeriod = async (period, referenceDate, accountId) =
     ]
   }
 
+  // const generateDaysForYear = async (year) =>
+  // {
+  //   const days = []
+  //   const startOfYear = new Date(year, 0, 1)
+  //   const endOfYear = new Date(year, 11, 31)
+
+  //   const eventsData = await fetchEventsForPeriod(accountId, formatDate(startOfYear), formatDate(endOfYear))
+  //   const eventsMap = eventsData.reduce((acc, { date, events }) =>
+  //   {
+  //     acc[ date ] = events
+  //     return acc
+  //   }, {})
+
+  //   for (let month = 0; month < 12; month++)
+  //   {
+  //     const monthDays = await generateDaysForMonth(year, month)
+  //     days.push(...monthDays)
+  //   }
+
+  //   return days.map((day) => ({
+  //     ...day,
+  //     events: eventsMap[ day.date ] || [],
+  //   }))
+  // }
+
   const generateDaysForYear = async (year) =>
   {
-    const days = []
+    const months = [] // This will hold the months and their days
     const startOfYear = new Date(year, 0, 1)
     const endOfYear = new Date(year, 11, 31)
 
+    // Fetch events for the entire year
     const eventsData = await fetchEventsForPeriod(accountId, formatDate(startOfYear), formatDate(endOfYear))
     const eventsMap = eventsData.reduce((acc, { date, events }) =>
     {
@@ -161,17 +187,40 @@ export const generateCalendarPeriod = async (period, referenceDate, accountId) =
       return acc
     }, {})
 
+    // Loop through each month
     for (let month = 0; month < 12; month++)
     {
-      const monthDays = await generateDaysForMonth(year, month)
-      days.push(...monthDays)
+      const monthName = new Date(year, month).toLocaleString('default', { month: 'long' }) // Get the full name of the month
+      const monthDays = await generateDaysForMonth(year, month) // Fetch the days for the month
+
+      // Create an object for the month
+      const monthObj = {
+        name: monthName,
+        days: monthDays.map(day =>
+        {
+          const currentDay = new Date(day.date + 'T12:00:00Z') // Create a date object for the day
+
+          // Determine if the day is in the current month
+          const isCurrentMonth = currentDay.getFullYear() === year && currentDay.getMonth() === month
+
+          return {
+            ...day,
+            events: eventsMap[ day.date ] || [], // Attach events for each day
+            isCurrentMonth: isCurrentMonth, // Set true only for days in the current month
+          }
+        }),
+      }
+
+      months.push(monthObj) // Add the month object to the months array
     }
 
-    return days.map((day) => ({
-      ...day,
-      events: eventsMap[ day.date ] || [],
-    }))
+    // Return the months array
+    return months
   }
+
+
+
+
 
   const year = referenceDate.getFullYear()
   const month = referenceDate.getMonth()

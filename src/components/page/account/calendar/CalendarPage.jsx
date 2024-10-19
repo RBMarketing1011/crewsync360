@@ -8,6 +8,7 @@ import { generateCalendarPeriod } from '@lib/helpers/calendar/genCalendarPeriod'
 import Loading from '@components/atom/Loading'
 import DayView from '@components/molecule/calendars/DayView'
 import WeekView from '@components/molecule/calendars/WeekView'
+import YearView from '@components/molecule/calendars/YearView'
 
 const CalendarPage = ({ accountId }) =>
 {
@@ -55,6 +56,8 @@ const CalendarPage = ({ accountId }) =>
 
   }, [ monthData ])
 
+  yearData && console.log(yearData)
+
   return (
     <div className="lg:flex lg:h-full lg:flex-col">
       <CalendarHeader
@@ -88,9 +91,15 @@ const CalendarPage = ({ accountId }) =>
 
               :
 
-              calendarView === 'Month' &&
+              calendarView === 'Month' ?
 
-              <MonthView days={ monthData } />
+                <MonthView days={ monthData } />
+
+                :
+
+                calendarView === 'Year' &&
+
+                <YearView months={ yearData } />
       }
     </div>
   )
