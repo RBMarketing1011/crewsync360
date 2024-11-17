@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react'
 
 const WeekView = ({ days }) =>
 {
-  console.log(days)
   const container = useRef(null)
   const containerNav = useRef(null)
   const containerOffset = useRef(null)
@@ -20,8 +19,8 @@ const WeekView = ({ days }) =>
   }, [])
 
   return (
-    <div className="flex h-full flex-col">
-      <div ref={ container } className="isolate flex flex-auto flex-col overflow-auto bg-white">
+    <div className="flex h-full flex-col max-h-[75vh] overflow-hidden">
+      <div ref={ container } className="isolate flex flex-auto flex-col h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-sky-700 scrollbar-track-sky-100">
         <div style={ { width: '165%' } } className="flex max-w-full flex-none flex-col sm:max-w-none md:max-w-full">
           <div
             ref={ containerNav }

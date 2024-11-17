@@ -22,6 +22,8 @@ const MiscProvider = ({ children }) =>
   // Is Page Scrolled
   const [ isPageScrolled, setIsPageScrolled ] = useState(false)
 
+  const [ loading, setLoading ] = useState(false)
+
   return (
     <MiscContext.Provider value={ {
       // Messages
@@ -33,7 +35,9 @@ const MiscProvider = ({ children }) =>
       // Token 
       tokenState: [ token, setToken ],
       // Is Page Scrolled
-      isPageScrolledState: [ isPageScrolled, setIsPageScrolled ]
+      isPageScrolledState: [ isPageScrolled, setIsPageScrolled ],
+      // Loading
+      loadingState: [ loading, setLoading ],
     } }>
 
       { children }

@@ -148,31 +148,6 @@ export const generateCalendarPeriod = async (period, referenceDate, accountId) =
     ]
   }
 
-  // const generateDaysForYear = async (year) =>
-  // {
-  //   const days = []
-  //   const startOfYear = new Date(year, 0, 1)
-  //   const endOfYear = new Date(year, 11, 31)
-
-  //   const eventsData = await fetchEventsForPeriod(accountId, formatDate(startOfYear), formatDate(endOfYear))
-  //   const eventsMap = eventsData.reduce((acc, { date, events }) =>
-  //   {
-  //     acc[ date ] = events
-  //     return acc
-  //   }, {})
-
-  //   for (let month = 0; month < 12; month++)
-  //   {
-  //     const monthDays = await generateDaysForMonth(year, month)
-  //     days.push(...monthDays)
-  //   }
-
-  //   return days.map((day) => ({
-  //     ...day,
-  //     events: eventsMap[ day.date ] || [],
-  //   }))
-  // }
-
   const generateDaysForYear = async (year) =>
   {
     const months = [] // This will hold the months and their days

@@ -14,6 +14,19 @@ const jobSchema = new Schema({
     ref: 'Customer',
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
+  serviceType: {
+    type: String,
+    enum: [ 'Plumbing', 'Electrical', 'HVAC', 'Cleaning', 'Landscaping', 'General Repair' ],
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
   assignedEmployees: [ {
     employee: {
       type: Schema.Types.ObjectId,
@@ -22,21 +35,14 @@ const jobSchema = new Schema({
     },
     isLead: { type: Boolean, default: false }
   } ],
-  movingFromAddress: {
+  address: {
     address1: { type: String, required: true },
     address2: { type: String },
     city: { type: String, required: true },
     state: { type: String, required: true },
     zip: { type: String, required: true }
   },
-  movingToAddress: {
-    address1: { type: String, required: true },
-    address2: { type: String },
-    city: { type: String, required: true },
-    state: { type: String, required: true },
-    zip: { type: String, required: true }
-  },
-  dateOfMove: {
+  dateOfJob: {
     type: Date,
     required: true
   },
@@ -56,7 +62,7 @@ const jobSchema = new Schema({
     type: Boolean,
     default: false
   },
-  numberOfMovers: {
+  numberOfEmployees: {
     type: Number,
     default: null
   },
@@ -67,6 +73,25 @@ const jobSchema = new Schema({
   actualHours: {
     type: Number,
     default: null
+  },
+  safetyConcerns: {
+    type: String,
+  },
+  serviceItemsandMaterials: {
+    items: { type: String },
+    materials: { type: String }
+  },
+  pricing: {
+    type: {
+      type: String,
+      enum: [ 'Flat Rate', 'Hourly Rate' ],
+      required: true
+    },
+    estimatedPrice: { type: Number },
+    finalPrice: { type: Number }
+  },
+  customerServices: {
+    type: String
   },
   notes: [ {
     owner: {
@@ -79,19 +104,15 @@ const jobSchema = new Schema({
     type: { type: String, required: true },
     quantity: { type: Number, required: true }
   } ],
-  packingMaterials: [ {
-    type: { type: String, required: true },
-    quantity: { type: Number, required: true }
-  } ],
   documents: [ {
     name: { type: String, required: true },
+    url: { type: String, required: true },
     sent: { type: Boolean, default: false },
     signed: { type: Boolean, default: false }
   } ],
   photos: [ {
     url: { type: String, required: true },
-    description: { type: String },
-    dateTaken: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now }
   } ],
 }, { timestamps: true })
 

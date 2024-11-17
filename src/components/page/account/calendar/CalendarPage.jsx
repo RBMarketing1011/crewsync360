@@ -56,21 +56,20 @@ const CalendarPage = ({ accountId }) =>
 
   }, [ monthData ])
 
-  yearData && console.log(yearData)
-
   return (
     <div className="lg:flex lg:h-full lg:flex-col">
       <CalendarHeader
         calendarView={ { state: calendarView, setState: setCalendarView } }
         heading={ date && `${ calendarView === 'Year' ? '' : date.month } ${ calendarView === 'Day' ? date.day + ',' : '' } ${ date.year }` }
+        accountId={ accountId }
       />
 
       {
         loading || (!dayData && !weekData && !monthData && !yearData) ?
 
           <Loading
-            title='Loading calendar'
-            description='Please wait while we load the calendar...'
+            title='Loading...'
+            text='Please wait while we load the calendar...'
           />
 
           :

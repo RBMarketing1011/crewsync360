@@ -1,7 +1,3 @@
-'use client'
-
-import { useContext } from 'react'
-
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 import
@@ -11,10 +7,12 @@ import
   ChevronRightIcon,
   EllipsisHorizontalIcon,
 } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 
-const CalendarHeader = ({ calendarView, heading }) =>
+const CalendarHeader = ({ calendarView, heading, accountId }) =>
 {
+
   return (
     <header className="flex items-center justify-between border-b border-gray-200 py-4 lg:flex-none sticky top-16 z-[1000] bg-white">
       <h1 className="text-base font-semibold leading-6 text-gray-900">
@@ -99,12 +97,12 @@ const CalendarHeader = ({ calendarView, heading }) =>
             </MenuItems>
           </Menu>
           <div className="ml-6 h-6 w-px bg-gray-300" />
-          <button
-            type="button"
-            className="ml-6 rounded-md bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+          <Link
+            href={ `/account/${ accountId }/jobs/new-job` }
+            className="ml-6 rounded-md bg-sky-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
           >
-            Add event
-          </button>
+            Add Job
+          </Link>
         </div>
         <Menu as="div" className="relative ml-6 md:hidden">
           <MenuButton className="-mx-2 flex items-center rounded-full border border-transparent p-2 text-gray-400 hover:text-gray-500">

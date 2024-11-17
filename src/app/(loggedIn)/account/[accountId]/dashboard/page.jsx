@@ -1,16 +1,10 @@
 import AccountDashboardPage from '@components/page/account/dashboard/AccountDashboardPage'
 
 
-const Dashboard = ({ params }) =>
+const Dashboard = () =>
 {
-  const { accountId } = params
-
   return (
-    <>
-      <AccountDashboardPage
-        accountId={ accountId }
-      />
-    </>
+    <AccountDashboardPage />
   )
 }
 

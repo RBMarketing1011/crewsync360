@@ -7,24 +7,27 @@ import { CustomerProvider } from './context/CustomerProvider'
 import { JobProvider } from './context/JobProvider'
 import { MiscProvider } from './context/MiscProvider'
 import { NewUserScreenProvider } from './context/NewUserScreenProvider'
+import GoogleAPIProvider from './google/GoogleAPIProvider'
 
 const AppProvider = ({ children }) =>
 {
   return (
     <AuthProvider>
-      <ThemeProvider>
-        <UserProvider>
-          <CustomerProvider>
-            <JobProvider>
-              <MiscProvider>
-                <NewUserScreenProvider>
-                  { children }
-                </NewUserScreenProvider>
-              </MiscProvider>
-            </JobProvider>
-          </CustomerProvider>
-        </UserProvider>
-      </ThemeProvider>
+      <GoogleAPIProvider>
+        <ThemeProvider>
+          <UserProvider>
+            <CustomerProvider>
+              <JobProvider>
+                <MiscProvider>
+                  <NewUserScreenProvider>
+                    { children }
+                  </NewUserScreenProvider>
+                </MiscProvider>
+              </JobProvider>
+            </CustomerProvider>
+          </UserProvider>
+        </ThemeProvider>
+      </GoogleAPIProvider>
     </AuthProvider>
   )
 }

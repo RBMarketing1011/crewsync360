@@ -55,14 +55,14 @@ const Sidebar = ({ children, accountId }) =>
       icon: RectangleGroupIcon
     },
     {
+      name: 'Jobs',
+      href: `/account/${ accountId }/jobs`,
+      icon: RocketLaunchIcon
+    },
+    {
       name: 'Calendar',
       href: `/account/${ accountId }/calendar`,
       icon: CalendarDaysIcon
-    },
-    {
-      name: 'Leads',
-      href: `/account/${ accountId }/leads`,
-      icon: RocketLaunchIcon
     },
     {
       name: 'Team',
@@ -110,7 +110,7 @@ const Sidebar = ({ children, accountId }) =>
   return (
     <>
       <div>
-        <Dialog open={ mobileMenuOpen } onClose={ setMobileMenuOpen } className="relative z-50 lg:hidden">
+        <Dialog open={ mobileMenuOpen } onClose={ setMobileMenuOpen } className="relative z-[10000] lg:hidden">
           <DialogBackdrop
             transition
             className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
@@ -387,7 +387,7 @@ const Sidebar = ({ children, accountId }) =>
         </div>
 
         <div className="lg:pl-72">
-          <div className="sticky top-0 z-40 lg:mx-auto lg:max-w-8xl lg:px-8 bg-white">
+          <div className="sticky top-0 z-40 lg:mx-auto lg:px-8 bg-white">
             <div className="flex h-16 items-center gap-x-4 border-b border-gray-200 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-0 lg:shadow-none">
               <button
                 type="button"

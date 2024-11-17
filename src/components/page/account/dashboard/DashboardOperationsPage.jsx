@@ -1,11 +1,10 @@
 'use client'
 
-import LineChart from '@components/atom/charts/LineChart'
-import DoughnutChart from '@components/atom/charts/DoughnutChart'
-import BarChart from '@components/atom/charts/BarChart'
+import HorizontalBarChart from '@components/atom/charts/HorizontalBarChart'
+import AreaChart from '@components/atom/charts/AreaChart'
 
 
-const AccountDashboardPage = () =>
+const DashboardOperationsPage = () =>
 {
   return (
     <main className="flex-1 w-full lg:w-[40vw] space-y-8 mb-20 -mt-1">
@@ -18,7 +17,7 @@ const AccountDashboardPage = () =>
             </h2>
           </div>
         </div>
-        <LineChart />
+        <HorizontalBarChart />
       </section>
       <section className="p-6 rounded-md shadow-[0_0_10px_lightgray]">
         <div className="md:flex md:items-center md:justify-between border-b border-gray-200 pb-5 mb-5">
@@ -28,21 +27,9 @@ const AccountDashboardPage = () =>
             </h2>
           </div>
         </div>
-        <div className='sm:px-24 md:px-48 xl:px-24 2xl:px-48'>
-          <DoughnutChart />
-        </div>
-      </section>
-      <section className="p-6 rounded-md shadow-[0_0_10px_lightgray]">
-        <div className="md:flex md:items-center md:justify-between border-b border-gray-200 pb-5 mb-5">
-          <div className="min-w-0 flex-1">
-            <h2 className="text-xl font-bold leading-7 text-gray-900 sm:truncate sm:text-2xl sm:tracking-tight">
-              Job Status
-            </h2>
-          </div>
-        </div>
-        <BarChart />
+        <AreaChart />
       </section>
     </main>
   )
 }
-export default AccountDashboardPage
+export default DashboardOperationsPage
